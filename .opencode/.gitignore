@@ -1,0 +1,13 @@
+# if users install local plugins, these will cause issues if tracked
+# since these are auto generated from opencode.json, they are safe to ignore...
+bun.lock
+package.json
+
+# These will be specific per user (for now)
+agents/
+commands/
+plans/
+skills/
+
+# Always include things in the examples/ directory
+!examples/**

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["@franlol/opencode-md-table-formatter@latest"],
+  "keybinds": {
+    "leader": "ctrl+l"
+  },
+  "mcp": {
+    "MCP_DOCKER": {
+      "command": ["docker", "mcp", "gateway", "run"],
+      "type": "local",
+      "enabled": true
+    }
+  },
+  "model": "anthropic/claude-opus-4-6",
+  "agent": {
+    "build": {
+      "prompt": "{file:./prompts/builder.md}"
+    },
+    "plan": {
+      "prompt": "{file:./prompts/planner.md}",
+      "permission": {
+        "edit": "ask"
+      }
+    }
+  },
+  "permission": {
+    "read": {
+      "*.env": "allow",
+      "*.env.defaults": "allow"
+    },
+    "bash": {
+      "git": "ask",
+      "git diff": "allow",
+      "git fetch": "allow",
+      "git show": "allow",
+      "git status": "allow",
+      "grep": "allow",
+      "head": "allow"
+    }
+  }
+}
